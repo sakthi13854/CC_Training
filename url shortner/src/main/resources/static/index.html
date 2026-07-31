@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity URL Shortener</title>
+    <meta name="description" content="A premium, lightning-fast URL shortener.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            AGY Links
+        </div>
+        <div class="nav-links">
+            <a href="analytics.html" class="nav-link">Analytics</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Shorten Your Links</h1>
+            <p>Create sleek, trackable short URLs in seconds.</p>
+        </header>
+
+        <section class="glass-panel">
+            <form id="shorten-form" class="url-form">
+                <div class="input-group">
+                    <label for="originalUrl">Destination URL</label>
+                    <input type="url" id="originalUrl" placeholder="https://example.com/very/long/link" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="customAlias">Custom Alias <span class="optional">(Optional)</span></label>
+                    <div class="alias-input-wrapper">
+                        <span class="domain-prefix" id="domain-prefix">agy.link/</span>
+                        <input type="text" id="customAlias" placeholder="my-custom-link">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" id="submit-btn">
+                    <span>Shorten URL</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </form>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="success-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h3>Your short link is ready!</h3>
+                <div class="copy-box">
+                    <input type="text" id="shortUrlOutput" readonly>
+                    <button class="btn-copy" id="copy-btn" title="Copy to clipboard">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                </div>
+                <div class="result-actions">
+                    <a href="#" id="analytics-link" class="btn-secondary">View Analytics</a>
+                    <button id="shorten-another" class="btn-text">Shorten another</button>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error-message hidden"></div>
+        </section>
+    </main>
+
+    <script src="/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const domainPrefix = window.location.host + '/';
+            document.getElementById('domain-prefix').textContent = domainPrefix;
+        });
+    </script>
+</body>
+</html>

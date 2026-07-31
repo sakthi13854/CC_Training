@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAe9Idb_PbdjA3nTxdp2RfnB1NfTujs0dc",
-  authDomain: "iosh-bdd73.firebaseapp.com",
-  projectId: "iosh-bdd73",
+  apiKey: "Your_Firebase_key",
+  authDomain: "yourAuthDomain",
+  projectId: "YourProjectId",
   storageBucket: "iosh-bdd73.firebasestorage.app",
-  messagingSenderId: "443391054371",
-  appId: "1:443391054371:web:cddb0eeb87625625099796",
-  measurementId: "G-RPCN3ZTF8T"
+  messagingSenderId: "your_sender_id",
+  appId: "1:Your_apl_id",
+  measurementId: "your_measurementId"
 };
 
 const app = initializeApp(firebaseConfig);
